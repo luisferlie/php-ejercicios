@@ -1,0 +1,17 @@
+fieldset {
+    background: azure;
+    margin-left: 100px;
+    margin-top: 10px;
+    width: 60%;
+}
+
+legend {
+    font-size: 2em;
+    color: blue;
+}
+
+input[type=submit],
+input[type=reset] {
+    color: darkblue;
+    font-size: 1.4em;
+}

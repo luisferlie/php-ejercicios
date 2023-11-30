@@ -1,0 +1,16 @@
+.navbar {
+    background-color: orange !important;
+}
+
+#navbar {
+    background-color: aquamarine !important;
+    color: rgb(31, 4, 4) !important;
+}
+
+#navbar a {
+    color: rgb(201, 10, 10) !important;
+}
+
+.nav-link {
+    color: rgb(44, 63, 78)
+}

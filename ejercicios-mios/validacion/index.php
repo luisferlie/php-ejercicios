@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST["enviar"])) {
-    echo "mamon";
+
     $nombre = htmlspecialchars($_POST["nombre"]) ?? 'anonimo';
     $correo = htmlspecialchars($_POST["correo"]) ?? 'desconocido';
     $password = htmlspecialchars($_POST["password"]) ?? 'unknown';

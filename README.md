@@ -1,10 +1,14 @@
 # php-ejercicios
 
+###### php-ejercicios
+
+### php-ejercicios
+
 estos son ejercicios de clse en **cpi** los enlaces
 
-##### ejercicios
+**_ejercicios_**
 
-para pintar codigo
+_para_ **pintar** _codigo_
 
 ```html
 <html>
@@ -22,17 +26,20 @@ Lista de compras
 
 ---
 
-- Frutas
-  - Manzanas
-  - Naranjas
-  - Uvas
-- Lácteos
-  - Leche
-  - Queso
+1 - Frutas
+
+- Manzanas
+- Naranjas
+- Uvas
+
+2- Lácteos
+
+- Leche
+- Queso
 
 > Hola. Éste es un párrafo de texto incluido en un bloque de cita
 
-![Logo de Wikipedia](https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg "Wikipedia logo")
+> ![Logo de Wikipedia](https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg "Wikipedia logo")
 
 ---
 

@@ -11,6 +11,9 @@
 
     if (!isset($_GET['numero'])) {
 
+        /* si es la primera vez iniciara el num aleatorio e intentos a 0.Luego -cada vez que le de a jugar -
+    le enviara a la pagina el aleatorio , los intentos y el numero con lo que recorrera el else y la pagina le pintara si el numero es mayor o menor y podra seguir jugando o reiniciar*/
+
         if (!isset($_GET['aleatorio'])) {
             $intentos = 0;
             $aleatorio = rand(1, 100);
@@ -44,7 +47,9 @@
 
         echo "<br>";
         echo "<br><a href='index.php?aleatorio=$aleatorio&intentos=$intentos'><button>Sigue jugando...</button></a><br>";
+        /* enviara a la pagina el aleatorio , los intentos y el numero del usuario para que ejecute el else al estar establecido $_GET['numero]*/
         echo "<br><a href='index.php?'aleatorio=null&intentos=0><button>Volver a empezar..</button>.</a>";
+        /* reinicia el juego al pasar el aleatorio como null e intentos a 0...con lo que $_GET['numero] no esta definido*/
     }
 
     ?>

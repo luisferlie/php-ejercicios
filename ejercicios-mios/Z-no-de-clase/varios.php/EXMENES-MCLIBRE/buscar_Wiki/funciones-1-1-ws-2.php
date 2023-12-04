@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Convertidor de distancias (3) Con funciones - funciones-1-3-2.php
+ * Convertidor de distancias (1) Servicio web - funciones-1-1-2.php
  *
  * @author    Bartolomé Sintes Marco <bartolome.sintes+mclibre@gmail.com>
  * @copyright 2018 Bartolomé Sintes Marco
@@ -29,27 +29,22 @@
 <head>
     <meta charset="utf-8">
     <title>
-        Convertidor de distancias
-
+        Convertidor de distancias (1) Servicio web (Resultado).
+        Funciones (1). Funciones.
+        Ejercicios. PHP. Bartolomé Sintes Marco. www.mclibre.org
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mclibre-php-ejercicios.css" title="Color">
 </head>
 
 <body>
-    <h1>Convertidor de distancias </h1>
+    <h1>Convertidor de distancias (1) Servicio web (Resultado)</h1>
 
     <?php
     // Función de recogida de datos
-    function recoge($key)
+    function recoge($key, $type = "")
     {
-
-
-
-
-
-
-      /*   if (!is_string($key) && !is_int($key) || $key == "") {
+        if (!is_string($key) && !is_int($key) || $key == "") {
             trigger_error("Function recoge(): Argument #1 (\$key) must be a non-empty string or an integer", E_USER_ERROR);
         } elseif ($type !== "" && $type !== []) {
             trigger_error("Function recoge(): Argument #2 (\$type) is optional, but if provided, it must be an empty array or an empty string", E_USER_ERROR);
@@ -65,32 +60,12 @@
                 });
             }
         }
-        return $tmp; */
-    }
-
-    function convierte($num, $uniOri, $uniFin)
-    {
-        // La unidad intermedia es el metro
-        $numeroIntermedio = 0;
-        if ($uniOri == "km") {
-            $numeroIntermedio = $num * 1000;
-        } elseif ($uniOri == "m") {
-            $numeroIntermedio = $num;
-        } elseif ($uniOri == "cm") {
-            $numeroIntermedio = $num / 100;
-        }
-
-        if ($uniFin == "km") {
-            $numeroFinal = $numeroIntermedio / 1000;
-        } elseif ($uniFin == "m") {
-            $numeroFinal = $numeroIntermedio;
-        } elseif ($uniFin == "cm") {
-            $numeroFinal = $numeroIntermedio * 100;
-        }
-        return $numeroFinal;
+        return $tmp;
     }
 
     $unidades = ["km", "m", "cm"];
+
+    $camino = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/";
 
     $numero  = recoge("numero");
     $inicial = recoge("inicial");
@@ -125,12 +100,13 @@
     }
 
     if ($numeroOk && $inicialOk && $finalOk) {
-        $resultado = convierte($numero, $inicial, $final);
-        print "  <p>$numero $inicial = $resultado $final.</p>\n";
+        $consulta = http_build_query(["from" => $inicial, "into" => $final, "value" => $numero]);
+        $respuesta = file_get_contents("{$camino}funciones-1-1-ws.php?$consulta");
+        print "  <p>$numero $inicial = $respuesta $final.</p>\n";
         print "\n";
     }
     ?>
-    <p><a href="funciones-1-3-fu-1.php">Volver al formulario.</a></p>
+    <p><a href="funciones-1-1-ws-1.php">Volver al formulario.</a></p>
 
     <footer>
         <p class="ultmod">

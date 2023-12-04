@@ -1,87 +1,109 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="Refresh"
+        CONTENT="2; URL=D:\cpi-ejercicios\php-MIS EJERCICIOS\ejercicios-mios\Z-no-de-clase\varios.php\varios1.php">
+    <title>Document</title>
+</head>
+
+<body>
+    esto no pinta nada
+</body>
+
+</html> -->
+
 <?php
+/* function prueba() */
+/* {
+    global $a;
 
-function recoge($key, $type = "")
+    // Modificamos la variable $a en la función
+    $a = 50;
+}
+
+$a = 100;
+prueba();
+echo "<p>La variable a es $a.</p>\n";
+function saludo($nombre, $veces)
 {
-    if (!is_string($key) && !is_int($key) || $key == "") {
-        trigger_error("Function recoge(): Argument #1 (\$key) must be a non-empty string or an integer", E_USER_ERROR);
-    } elseif ($type !== "" && $type !== []) {
-        trigger_error("Function recoge(): Argument #2 (\$type) is optional, but if provided, it must be an empty array or an empty string", E_USER_ERROR);
+    for ($i = 0; $i < $veces; $i++) {
+        print "<p>Hola, $nombre!</p>\n";
+        print "\n";
     }
-    $tmp = $type;
-    if (isset($_GET[$key])) {
-        if (!is_array($_GET[$key]) && !is_array($type)) {
-            $tmp = trim(htmlspecialchars($_GET[$key]));
-        } elseif (is_array($_GET[$key]) && is_array($type)) {
-            $tmp = $_GET[$key];
-            array_walk_recursive($tmp, function (&$value) {
-                $value = trim(htmlspecialchars($value));
-            });
-        }
-    }
-    return $tmp;
 }
 
-if (isset($_GET["nombre"])) {
+saludo("Don Pepito", 3);
+saludo(1, 1, 3); */
 
-    var_dump($_GET['nombre']);
-    $nombre = $_GET["nombre"];
-    var_dump($nombre);
-
-    $apellido = $_GET["apellido"];
-    $edad = $_GET["edad"];
+// Definición de la función prueba()
+/* function test($x)
+{
+    print "<p>La variable es $x.</p>\n";
+    print "\n";
 }
 
-if (!isset($_GET["nombre"])) {
+// Damos un valor a las variables
+$a = 100;
+$b = 50;
+print "<p>La variable a es $a y la variable b es $b.</p>\n";
+print "\n";
+// Llamamos a la función
+test($a);
+test($b);
+// Volvemos a escribir las variables
+print "<p>La variable a es $a y la variable b es $b.</p>\n";
+
+
+// ESTA ES LA DEFINICIÓN DE LA FUNCIÓN calculaMedia
+function calculaMedia($arg1, $arg2, $arg3 = "aritmética")
+{
+    if ($arg3 == "aritmética") {
+        $media = ($arg1 + $arg2) / 2;
+    } elseif ($arg3 == "geométrica") {
+        $media = sqrt($arg1 * $arg2) / 2;
+    } elseif ($arg3 == "armónica") {
+        $media = 2 * ($arg1 * $arg2) / ($arg1 + $arg2);
+    }
+    return $media;
+}
+
+// ESTO SON EJEMPLOS DE USO DE LA FUNCIÓN calculaMedia
+$dato1 = 128975649756;
+$dato2 = 16345384935;
+
+// EL TERCER ARGUMENTO INDICA EL TIPO DE MEDIA A CALCULAR
+$media = number_format(calculaMedia($dato1, $dato2, "geométrica"), 2, ",", ".");
+print "<p>La media geométrica de $dato1 y $dato2 es $media.</p>\n";
+print "\n";
+
+// AL NO PONER EL TERCER ARGUMENTO, DEVUELVE LA MEDIA ARITMÉTICA
+$media = calculaMedia($dato1, $dato2);
+print "<p>La media aritmética de $dato1 y $dato2 es $media.</p>\n"; */
+$to = "luisferlie@gmail.com";
+$subject = "prueba";
+$body = "Línea 1\r\nLínea 2\r\nLínea 3";
+/* $body = str_replace("\n.", "\n..", $body); */
+echo "Tu email ha sido enviado de forma exitosa a $to!";
+mail("luisferlie@gmail.com", "prueba", "Línea 1\r\nLínea 2\r\nLínea 3");
+/* header('location:sesiones.php');
+exit(); */
 
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-    <!DOCTYPE html>
-    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+<body>
+    <a href="sesiones.php">vuelve a sesiones.php</a>
+</body>
 
-    <body>
-        <form action="funciones.php">
-            Nombre: <input type="text" name="nombre"><br><br>
-            Apellido: <input type="text" name="apellido"><br><br>
-            Edad: <input type="text" name="edad"><br><br>
-
-            <input type="submit" value="enviar" name="enviar">
-        </form>
-
-
-    </body>
-
-    </html>
-
-<?php } else { ?>
-
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-
-    <body>
-        <h1>estos son tus datos</h1>
-
-        <p>Nombre: <?php $nombre ?></p>
-        <p>Apellido:<?php $apellido ?></p>
-        <p>Edad:<?php $edad ?></p>
-
-
-        </form>
-
-
-    </body>
-
-    </html>
-<?php } ?>
+</html>

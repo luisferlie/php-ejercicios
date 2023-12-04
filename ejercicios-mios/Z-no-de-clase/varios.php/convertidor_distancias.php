@@ -1,55 +1,24 @@
-<?php
-
-/**
- * Convertidor de distancias (3) Con funciones - funciones-1-3-2.php
- *
- * @author    Bartolomé Sintes Marco <bartolome.sintes+mclibre@gmail.com>
- * @copyright 2018 Bartolomé Sintes Marco
- * @license   http://www.gnu.org/licenses/agpl.txt AGPL 3 or later
- * @version   2018-12-09
- * @link      https://www.mclibre.org
- *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Affero General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU Affero General Public License for more details.
- *
- *  You should have received a copy of the GNU Affero General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-?>
-<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <title>
-        Convertidor de distancias
-
+        Convertidor de distancias (1) Con funciones (Resultado).
+        Funciones (1). Funciones.
+        Ejercicios. PHP. Bartolomé Sintes Marco. www.mclibre.org
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mclibre-php-ejercicios.css" title="Color">
 </head>
 
 <body>
-    <h1>Convertidor de distancias </h1>
+    <h1>Convertidor de distancias (1) Con funciones (Resultado)</h1>
 
     <?php
     // Función de recogida de datos
-    function recoge($key)
+    function recoge($key, $type = "")
     {
-
-
-
-
-
-
-      /*   if (!is_string($key) && !is_int($key) || $key == "") {
+        if (!is_string($key) && !is_int($key) || $key == "") {
             trigger_error("Function recoge(): Argument #1 (\$key) must be a non-empty string or an integer", E_USER_ERROR);
         } elseif ($type !== "" && $type !== []) {
             trigger_error("Function recoge(): Argument #2 (\$type) is optional, but if provided, it must be an empty array or an empty string", E_USER_ERROR);
@@ -65,7 +34,7 @@
                 });
             }
         }
-        return $tmp; */
+        return $tmp;
     }
 
     function convierte($num, $uniOri, $uniFin)
@@ -130,7 +99,7 @@
         print "\n";
     }
     ?>
-    <p><a href="funciones-1-3-fu-1.php">Volver al formulario.</a></p>
+    <p><a href="funciones-1-1-fu-1.php">Volver al formulario.</a></p>
 
     <footer>
         <p class="ultmod">

@@ -4,7 +4,7 @@
 $opcion = $_POST['submit'] ?? null;
 switch ($opcion) {
 
-    case "Empezar": /*Identifico e inicializo las variables,reinicializamos las variables a comienzo del juego los valores minimos(1) y maximos posibles( pow(2, $intentos)),jugada a 1*/
+    case "Empezar": /*Identifico e inicializo las variables,reinicializamos las variables a comienzo del juego los valores minimos(1) y maximos posibles( pow(2, $intentos)),jugada a 1,e $intento enviado por post desde el index.php*/
     case "Reiniciar":
         $min = 1;
         $intentos = $_POST['intentos'];
@@ -12,7 +12,7 @@ switch ($opcion) {
         $jugada = 1;
         break;
     case "Jugar": //Hacemos la jugada actual (
-        //leer los datos que son los valores de la jugada anterior o de inicializar las variables
+        //leemos los datos que  nos llegan del formulario con los  valores de la jugada(jugada,intentos,max,min,numero(promedio de ambos))y en funcion del rtdo (mayor,menor,igual) indicado por el usuario,se generan los nuevos max,min
         $jugada = $_POST['jugada'];
         $jugada++; //actualizo la jugada
         $min = $_POST['min'];
@@ -20,7 +20,7 @@ switch ($opcion) {
         $num = $_POST['numero'];
         $intentos = $_POST['intentos'];
         $rtdo = $_POST['rtdo'];
-        //Evalúo la jugada si se ha  superado el numero de intentos y el resultado indicado no es (=) se reenvia a fin de juego por get con el valor de $resultado igual a false 
+        //Evalúo la jugada si se ha  superado el numero de intentos y el resultado indicado no es (=) se reenvia a fin de juego por get con el valor de $resultado igual a false .
         if ($jugada > $intentos && $rtdo != "=") {
             $resultado = false;
             header("Location:fin.php?acertado=$resultado");
@@ -42,7 +42,7 @@ switch ($opcion) {
                 exit();
 
                 /* en caso de que el resultado sea igual(=) redireccionamos a la pagina fin de juego con el valor de $acertado=true para que esta
-                indique mensaje de acertado,con la opcion de volver a jugar con un boton que redirecciona al inicio(index.php).*/
+                indique mensaje de acierto,con la opcion de volver a jugar con un boton que redirecciona al inicio(index.php).*/
         }
         break;
     case "Volver":
@@ -50,7 +50,7 @@ switch ($opcion) {
         header("Location:index.php?intentos=$intentos");
         exit();
     default:
-        //en caso de no tener ninguno de los valores previos(intentar acceder directamente...)redireccionamos al index
+        //en caso de no tener ninguno de los valores previos(intentar acceder directamente.a jugar.php...)redireccionamos al index
         header("Location:index.php");
         exit();
 }

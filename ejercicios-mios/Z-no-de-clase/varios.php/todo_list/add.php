@@ -1,35 +1,27 @@
 <?php
 
-// --------------------------------------------------------------------------------------
-// DEPENDANCES
-// --------------------------------------------------------------------------------------
 
 include 'utilities.php';
 
 
 
-// --------------------------------------------------------------------------------------
-// FONCTIONS
-// --------------------------------------------------------------------------------------
-
 function addTask($title, $description, $date, $priority)
 {
-    if(empty($description) == true)
-    {
+    if (empty($description) == true) {
         $description = 'Tâche sans description';
     }
 
-	// Création du tableau contenant la tâche.
-	$taskData =
-	[
-		$title,
-		$description,
-		$date,
-		$priority
-	];
+    // Création du tableau contenant la tâche.
+    $taskData =
+        [
+            $title,
+            $description,
+            $date,
+            $priority
+        ];
 
-	// Enregistrement du tableau contenant la tâche.
-	saveTask($taskData);
+    // Enregistrement du tableau contenant la tâche.
+    saveTask($taskData);
 }
 
 
@@ -39,11 +31,11 @@ function addTask($title, $description, $date, $priority)
 // --------------------------------------------------------------------------------------
 
 // Si l'utilisateur n'a pas saisi de titre à la tâche alors on ne l'ajoute pas.
-if(empty($_POST['title']) == false) // ou if($_POST['title'] != '')
+if (empty($_POST['title']) == false) // ou if($_POST['title'] != '')
 {
     // Récupération des données de formulaire.
     $description = $_POST['description'];
-    $date        = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
+    $date        = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
     $priority    = $_POST['priority'];
     $title       = $_POST['title'];
 

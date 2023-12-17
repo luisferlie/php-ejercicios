@@ -38,10 +38,12 @@ switch ($opcion) {
         // Una línea por cada producto
         // Muestro lo que había menos lo que he comprado
         //
-        $factura = generar_factura($productos);
+        list($factura, $inventario) = generar_factura($productos);
 
-        /* $inventario = generar_inventario($productos);
-        break; */
+        // $factura = generar_factura($productos); */
+
+        $inventario_html = generar_inventario($inventario);
+        break;
 
 
 
@@ -83,7 +85,7 @@ switch ($opcion) {
         </form>
         <h2><?= $html_productos ?></h2>
         <h2><?= $factura ?? "" ?></h2>
-        <h2><?= $inventario ?? "" ?></h2>
+        <h2><?= $inventario_html ?? "" ?></h2>
         <h2><?= $formulario_comprar ?? "" ?></h2>
 </body>
 

@@ -27,17 +27,24 @@ function obtener_formulario_productos($productos)
 function generar_factura($productos)
 {
     $html_factura = "<h1>Listado de sus compras</h1>";
-
+    $inventario = [];
     foreach ($productos as $producto => $udprecio) {
         //obtengo unidades pedidas considerando el stock disponible
         $udped = $_POST[$producto] > $udprecio['unidades'] ? $udprecio['unidades'] : $_POST[$producto];
+        $inventario[$producto] = (int)$productos[$producto]['unidades'] - (int)$udped;
         echo "$udped de $producto";
         //corrijo inventario
         $productos[$producto]['unidades'] -= (int)$udped;
         $html_factura .= "Ha comprado: $udped de $producto  y aun quedan {$productos[$producto]['unidades']}  en stock <br/>";
     }
-    return $html_factura;
+    var_dump($inventario);
+    return [$html_factura, $inventario];
 }
-function generar_inventario($productos)
+function generar_inventario($inventario)
 {
+    $inventario_html = '<h2>El inventario de productos es</h2>';
+    foreach ($inventario as $producto => $stock) {
+        $inventario_html .= "hay $stock unidades del producto $producto <br>";
+    }
+    return $inventario_html;
 }

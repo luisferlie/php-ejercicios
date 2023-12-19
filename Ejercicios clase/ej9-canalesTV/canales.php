@@ -9,6 +9,8 @@ function obtener_arrays_canales()
     return $contenido;
 }
 $canales = obtener_arrays_canales();
+$num_tematicas = count($canales);
+var_dump($num_tematicas);
 
 $tipo_canales = '';
 $canales_html = '';
@@ -21,7 +23,7 @@ do {
         $canales_html .= " {$valor['name']} <br><a href='{$valor['web']}'><img src='{$valor["logo"]}' width='50' ></a><br> ";
     }
     $i++;
-} while ($i < 10)
+} while ($i < 24)
 
 
 

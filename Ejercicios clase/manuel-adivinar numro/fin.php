@@ -16,6 +16,7 @@ else
 </head>
 
 <body>
+    <!--   se acaba el juego con resultado de(true/false) $acertado pasado por get (en caso de haber acertado o haber superado el numero de intentos) o de "no has sido sincero" ya que en el numero de intentos previsto necesariamente se ha de acertar el numero -->
     <h1><?= $msj ?></h1>
     <form action="index.php" method="post">
 

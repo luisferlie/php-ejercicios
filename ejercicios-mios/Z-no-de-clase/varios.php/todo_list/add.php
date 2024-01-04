@@ -26,9 +26,6 @@ function addTask($title, $description, $date, $priority)
 
 
 
-// --------------------------------------------------------------------------------------
-// CODE PRINCIPAL
-// --------------------------------------------------------------------------------------
 
 // Si l'utilisateur n'a pas saisi de titre à la tâche alors on ne l'ajoute pas.
 if (empty($_POST['title']) == false) // ou if($_POST['title'] != '')

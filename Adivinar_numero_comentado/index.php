@@ -37,6 +37,7 @@ switch ($intentos) {
     <h1>Juego de adivinar un número</h1>
     <fieldset>
         <legend>Selecciona un intervalo</legend>
+       <!--  Formulario que genera el numero de intentos en funcion de radio-button elegido y lo envia a jugar.php por post -->
         <form action="jugar.php" method="POST">
             <input type="radio" name="intentos" <?= $checked_10 ?> value="10" id="">10 intentos valores
             entre(1-1024)<br />

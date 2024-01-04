@@ -1,0 +1,18 @@
+a{
+    margin-left: 5%;
+    margin-top: 5%;
+
+    font-size:3rem;
+    color:darkblue;
+}
+
+fieldset{
+    width: 40%;
+    margin:10%;
+    background: antiquewhite;
+}
+legend{
+    color:blue;
+    font-size: 3rem;
+
+}
